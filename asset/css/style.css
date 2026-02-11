@@ -1,0 +1,179 @@
+/* Réinitialisation de base */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    background-color: #f3f3f3;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column; /* Aligne le header au-dessus du contenu */
+}
+
+/* --- HEADER --- */
+header {
+    width: 100%;
+    padding: 30px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    text-align: center;
+    position: sticky; /* Le header reste en haut au scroll */
+    top: 0;
+    z-index: 1000;
+}
+
+header h1 {
+    margin: 0;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+/* --- GRILLE DE PRODUITS --- */
+.products-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-end; /* Aligne les bases de toutes les cartes */
+    gap: 20px;
+    padding: 40px 24px;
+    flex-grow: 1;
+}
+
+/* --- CARTE PRODUIT --- */
+.product-card {
+    background-color: #ffffff;
+    width: 320px;
+    padding: 16px;
+    border-radius: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    position: relative;
+    overflow: hidden; /* Garde la bannière promo dans les arrondis */
+    height: auto;
+}
+
+/* --- STYLE SPÉCIFIQUE PROMO --- */
+.product-card--promo {
+    background-color: #e0e0e0; /* Fond gris clair */
+    padding-top: 0; /* Colle la bannière au sommet */
+}
+
+.product-card__promo {
+    background-color: #000000;
+    color: #ffffff;
+    text-align: center;
+    padding: 15px 0;
+    font-weight: bold;
+    font-size: 18px;
+    text-transform: uppercase;
+    width: calc(100% + 32px); /* Dépasse le padding interne de la carte */
+    margin-left: -16px; /* Centre la bannière malgré le dépassement */
+    margin-bottom: 8px;
+}
+
+/* --- GESTION DES IMAGES --- */
+.product-card__image-container {
+    width: 100%;
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff; /* Fond blanc interne pour l'image */
+    border-radius: 24px;
+}
+
+.product-card__image {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain; /* Empêche la déformation */
+}
+
+/* --- DÉTAILS ET TEXTES --- */
+.product-card__details {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.product-card__tag {
+    font-size: 13px;
+    text-transform: uppercase;
+    color: #888;
+    font-weight: 600;
+}
+
+.product-card__title {
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold;
+    color: #000;
+}
+
+/* --- GESTION DU PRIX BARRÉ --- */
+.product-card__price-container {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: flex-end; /* Aligne les prix à droite */
+    margin-top: 4px;
+}
+
+.product-card__price {
+    font-size: 18px;
+    color: #606060;
+}
+
+.product-card__price--old {
+    text-decoration: line-through; /* Barre le prix original */
+    color: #b0b0b0;
+    font-size: 16px;
+}
+
+.product-card__price--new {
+    color: #e63946; /* Rouge promotion */
+    font-weight: bold;
+    font-size: 20px;
+}
+
+/* --- BOUTON --- */
+.product-card__button {
+    margin-top: 10px;
+    width: 100%;
+    padding: 18px;
+    border: none;
+    border-radius: 100px;
+    background: #000000;
+    color: #ffffff;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+/*.product-card__button:hover {
+    margin-top: 10px;
+    width: 100%;
+    padding: 18px;
+    border: none;
+    border-radius: 100px;
+    background: #ffffff;
+    color: #000000;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    size: 110%;
+}*/
+
+.product-card__button:hover {
+    transform: scale(1.02);
+    background-color: #333;
+}
+
+.product-card__price{
+    align-self: flex-end;
+}
